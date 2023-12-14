@@ -2,13 +2,14 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
+from PIL import Image
 import sklearn
 
 # Add import statements for Preprocessor and columns if necessary
 
 model_url = 'https://raw.github.com/OliverHu726/ML_in_FRE_Project_App/main/model.pkl'
 model_response = requests.get(model_url)
-loaded_model = pickle.load(BytesIO(model_response.content))
+model = pickle.load(BytesIO(model_response.content))
 
 # title
 st.title("Predictions based on stock sentiment index")
@@ -36,7 +37,11 @@ def predict():
 # Fix the on_click parameter
 st.button('Predict', on_click=predict)
 
-st.image('wordcloud.png')
+wc_url = 'https://raw.github.com/OliverHu726/ML_in_FRE_Project_App/main/graphs/wordcloud.png'
+wc_response = requests.get(image_url)
+wc = Image.open(BytesIO(image_response.content))
+
+st.image(wc, caption='Data Visualization', use_column_width=True)
 st.image('vi.png')
 
 
