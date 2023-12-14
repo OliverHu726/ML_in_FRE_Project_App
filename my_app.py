@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import requests
+from io import BytesIO
 import pickle
 from PIL import Image
 import sklearn
