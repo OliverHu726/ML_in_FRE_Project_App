@@ -48,6 +48,10 @@ vi_url = 'https://raw.github.com/OliverHu726/ML_in_FRE_Project_App/main/graphs/V
 vi_response = requests.get(vi_url)
 vi = Image.open(BytesIO(vi_response.content))
 
+SARIMA_url = 'https://raw.github.com/OliverHu726/ML_in_FRE_Project_App/main/graphs/SARIMA.png'
+SARIMA_response = requests.get(SARIMA_url)
+SARIMA = Image.open(BytesIO(SARIMA_response.content))
+
 st.image(wc, caption='Word Cloud', use_column_width=True)
 st.image(vi, caption='Variable Importance', use_column_width=True)
 
