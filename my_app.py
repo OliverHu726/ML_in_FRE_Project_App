@@ -41,12 +41,12 @@ st.button('Predict', on_click=predict)
 
 # Load results of Visualization
 wc_url = 'https://raw.github.com/OliverHu726/ML_in_FRE_Project_App/main/graphs/wordcloud.png'
-wc_response = requests.get(image_url)
-wc = Image.open(BytesIO(image_response.content))
+wc_response = requests.get(wc_url)
+wc = Image.open(BytesIO(wc_response.content))
 
 vi_url = 'https://raw.github.com/OliverHu726/ML_in_FRE_Project_App/main/graphs/VariableImportance.png'
-vi_response = requests.get(image_url)
-vi = Image.open(BytesIO(image_response.content))
+vi_response = requests.get(vi_url)
+vi = Image.open(BytesIO(vi_response.content))
 
 st.image(wc, caption='Word Cloud', use_column_width=True)
 st.image(vi, caption='Variable Importance', use_column_width=True)
