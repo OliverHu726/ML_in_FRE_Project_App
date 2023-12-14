@@ -37,19 +37,17 @@ def predict():
 # Fix the on_click parameter
 st.button('Predict', on_click=predict)
 
+# Load results of Visualization
 wc_url = 'https://raw.github.com/OliverHu726/ML_in_FRE_Project_App/main/graphs/wordcloud.png'
 wc_response = requests.get(image_url)
 wc = Image.open(BytesIO(image_response.content))
 
-st.image(wc, caption='Data Visualization', use_column_width=True)
-st.image('vi.png')
+vi_url = 'https://raw.github.com/OliverHu726/ML_in_FRE_Project_App/main/graphs/VariableImportance.png'
+vi_response = requests.get(image_url)
+vi = Image.open(BytesIO(image_response.content))
 
-
-
-
-
-
-
+st.image(wc, caption='Word Cloud', use_column_width=True)
+st.image(vi, caption='Variable Importance', use_column_width=True)
 
 
 
