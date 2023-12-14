@@ -54,6 +54,6 @@ SARIMA = Image.open(BytesIO(SARIMA_response.content))
 
 st.image(wc, caption='Word Cloud', use_column_width=True)
 st.image(vi, caption='Variable Importance', use_column_width=True)
-
+st.image(SARIMA, caption='Time Series Analysis', use_column_width=True)
 
 
